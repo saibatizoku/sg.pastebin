@@ -14,7 +14,8 @@ setup(name='sg.pastebin',
         "Programming Language :: Python",
         ],
       keywords='plone dexterity pastebin',
-      author='Joaquín Rosales',
+      author='Joaquín Rosales'
+      'collective.autopermission',,
       author_email='globojorro@gmail.com',
       url='https://github.com/saibatizoku/sg.pastebin',
       license='GPL',
@@ -25,8 +26,12 @@ setup(name='sg.pastebin',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'Plone',
+          'plone.app.dexterity',
+          'collective.autopermission',
       ],
       entry_points="""
-      # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+            target = plone
       """,
       )
