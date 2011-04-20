@@ -5,22 +5,26 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="sg.pastebin">
 
-  <five:registerPackage package="." initialize=".initialize" />
+    <!-- Include configuration for dependencies listed in setup.py -->
+    <includeDependencies package="." />
 
-  <genericsetup:registerProfile
-      name="default"
-      title="Install SoftwareGuru Pastebin Content-Type"
-      directory="profiles/default"
-      description="Installs the sg.pastebin package"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
-  <genericsetup:registerProfile
-      name="uninstall"
-      title="Remove sg.pastebin"
-      directory="profiles/uninstall"
-      description="Installs the sg.pastebin package"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
-  <!-- -*- extra stuff goes here -*- -->
+    <!-- Grok the package to initialise schema interfaces and content classes -->
+    <grok:grok package="." />
+
+    <genericsetup:registerProfile
+        name="default"
+        title="Install SoftwareGuru Pastebin Content-Type"
+        directory="profiles/default"
+        description="Installs the sg.pastebin package"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+    <genericsetup:registerProfile
+        name="uninstall"
+        title="Remove sg.pastebin"
+        directory="profiles/uninstall"
+        description="Installs the sg.pastebin package"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+    <!-- -*- extra stuff goes here -*- -->
   
 </configure>
