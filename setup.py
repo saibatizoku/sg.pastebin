@@ -27,6 +27,7 @@ setup(name='sg.pastebin',
           'setuptools',
           # -*- Extra requirements: -*-
           'Plone',
+          'pygments',
           'plone.app.dexterity',
           'collective.autopermission',
       ],
