@@ -5,15 +5,20 @@ from zope import schema
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
+from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 from plone.directives import form, dexterity
 from plone.app.textfield import RichText
 
 from pygments import highlight
 from pygments.lexers import get_all_lexers
+from pygments.lexers import get_lexer_by_name
 from pygments.formatters import HtmlFormatter
 
 from sg.pastebin import _
+
+class ISGPastebinLayer(IDefaultBrowserLayer):
+    """ Browser layer for sg.pastebin """
 
 """
 @grok.provider(IContextSourceBinder)
@@ -28,5 +33,16 @@ def lexer_vocabulary(context=None):
 
 class IPaste(form.Schema):
     """ A content-type for source code snippets. """
-    body = schema.SourceText(title=_(u"Source code"))
-#    language = schema.Choice(title=_(u"Language"), values=lexer_vocabulary())
+    lexer  = schema.Choice(title=_(u"Language"), values=['python', 'php'], default='python')
+    code = schema.SourceText(title=_(u"Source code"))
+
+
+class View(grok.View):
+    grok.context(IPaste)
+    grok.require('zope2.View')
+    grok.layer(ISGPastebinLayer)
+
+    def pygmented(self):
+        """ Returns highlighted source code """
+        lx = get_lexer_by_name(self.context.lexer)
+        return highlight(self.context.code, lx, HtmlFormatter())
