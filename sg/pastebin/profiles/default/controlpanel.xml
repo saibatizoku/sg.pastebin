@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<object name="portal_controlpanel"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="sg.questions"
+    purge="False">
+    <configlet title="SG Pastebin"
+        action_id="sg_pastebin"
+        appId="sg.pastebin"
+        category="Products"
+        condition_expr=""
+        url_expr="string:${portal_url}/@@sg_pastebin_settings"
+        icon_expr="string:${portal_url}/++resource++sg.pastebin/16px-GNOME-High-contrast-edit-paste.png"
+        visible="True"
+        i18n:attributes="title">
+        <permission>Manage portal</permission>
+    </configlet>
+</object>

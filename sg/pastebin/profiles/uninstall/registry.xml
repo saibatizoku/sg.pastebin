@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<registry>
+    <records name="sg.pastebin.Settings" interface="sg.pastebin.controlpanel.ISGPastebinSettings" delete="True" />
+</registry>
