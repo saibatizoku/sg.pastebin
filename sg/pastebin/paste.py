@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from five import grok
 from zope import schema
+from plone.namedfile.field import NamedFile
 
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleTerm
@@ -35,6 +36,7 @@ class IPaste(form.Schema):
     """ A content-type for source code snippets. """
     lexer  = schema.Choice(title=_(u"Language"), values=['python', 'php'], default='python')
     code = schema.SourceText(title=_(u"Source code"))
+    codefile = NamedFile(title=_(u"Source-code file"), required=False)
 
 
 class View(grok.View):

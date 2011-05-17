@@ -27,6 +27,8 @@ setup(name='sg.pastebin',
           'setuptools',
           # -*- Extra requirements: -*-
           'Plone',
+          'plone.namedfile[blobs]',
+          'plone.formwidget.namedfile',
           'pygments',
           'plone.app.dexterity',
           'collective.autopermission',
