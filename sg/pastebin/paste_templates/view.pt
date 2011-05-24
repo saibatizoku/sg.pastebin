@@ -21,6 +21,8 @@
 
             <p class="documentDescription" tal:content="context/description" />
 
+            <div tal:content="structure here/@@rate-if-you-dare"/>
+
             <div tal:replace="structure provider:plone.abovecontentbody" />
 
             <div tal:condition="exists:view/pygmented" tal:content="structure view/pygmented" />

@@ -28,6 +28,7 @@ setup(name='sg.pastebin',
           # -*- Extra requirements: -*-
           'Plone',
           'pygments',
+          'cioppino.twothumbs',
           'plone.app.dexterity',
           'collective.autopermission',
           'collective.testcaselayer',
