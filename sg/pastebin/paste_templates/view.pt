@@ -25,8 +25,6 @@
 
             <div tal:condition="exists:view/pygmented" tal:content="structure view/pygmented" />
 
-                <a tal:condition="context/codefile" tal:attributes="href string:${context/absolute_url}/@@download/codefile/${context/codefile/filename}" tal:content="string:${context/codefile/filename}">Download file</a>
-
             <div tal:replace="structure provider:plone.belowcontentbody" />
 
         </tal:main-macro>
