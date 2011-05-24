@@ -1,0 +1,64 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2011-05-24 17:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: sg.pastebin\n"
+
+#: ./controlpanel.py:18
+msgid "A list of coding languages that will be highlighted according to their specific syntax."
+msgstr ""
+
+#: ./profiles/default/types/sg.pastebin.paste.xml
+msgid "A snippet of source code item"
+msgstr ""
+
+#: ./profiles/default/types/sg.pastebin.paste.xml
+msgid "Code Snippet"
+msgstr ""
+
+#: ./controlpanel.py:50
+msgid "Here you can modify the settings for SG Pastebin."
+msgstr ""
+
+#: ./controlpanel.py:40
+msgid "Highlighting style"
+msgstr ""
+
+#: ./controlpanel.py:35
+#: ./paste.py:46
+msgid "Language"
+msgstr ""
+
+#: ./controlpanel.py:17
+msgid "Preferred coding languages"
+msgstr ""
+
+#: ./controlpanel.py:49
+msgid "SoftwareGuru Pastebin Settings"
+msgstr ""
+
+#: ./paste.py:47
+msgid "Source code"
+msgstr ""
+
+#: ./paste.py:48
+msgid "Source-code file"
+msgstr ""
+
+#: ./controlpanel.py:37
+msgid "Styles for highlighting syntax"
+msgstr ""
+
