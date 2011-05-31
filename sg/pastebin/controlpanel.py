@@ -11,27 +11,21 @@ from plone.app.registry.browser import controlpanel
 
 from sg.pastebin import _
 
+LANGS = [ u"ActionScript", u"Bash",
+          u"C", u"C#",
+          u"C++", u"CSS",
+          u"HTML", u"Java",
+          u"JavaScript", u"Lua",
+          u"Perl", u"PHP",
+          u"Python", u"SQL",
+          u"Ruby"]
 
 class ISGPastebinSettings(Interface):
     """ Interface for the form on the control panel. """
     preferred_languages = schema.Set(title=_(u"Preferred coding languages"),
             description=_(u"A list of coding languages that will be highlighted according to their specific syntax."),
             required=False,
-            default=set([u"ActionScript",
-                        u"Bash",
-                        u"C",
-                        u"C#",
-                        u"C++",
-                        u"CSS",
-                        u"HTML",
-                        u"Java",
-                        u"JavaScript",
-                        u"Lua",
-                        u"Perl",
-                        u"PHP",
-                        u"Python",
-                        u"SQL",
-                        u"Ruby"]),
+            default=set(LANGS),
             value_type= schema.TextLine(title=_(u"Language")))
 
     preferred_styles = schema.Set(title=_(u"Styles for highlighting syntax"),
@@ -39,6 +33,7 @@ class ISGPastebinSettings(Interface):
             default=set([]),
             value_type = schema.TextLine(title=_(u"Highlighting style"))
             )
+
 
 class SGPastebinSettingsEditForm(controlpanel.RegistryEditForm):
     grok.context(IPloneSiteRoot)
