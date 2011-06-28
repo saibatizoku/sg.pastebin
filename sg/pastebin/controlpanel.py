@@ -8,6 +8,8 @@ from Products.CMFCore.utils import getToolByName
 
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from plone.app.registry.browser import controlpanel
+from plone.directives import form
+from plone.z3cform.textlines import TextLinesFieldWidget
 
 from sg.pastebin import _
 
@@ -20,8 +22,9 @@ LANGS = [ u"ActionScript", u"Bash",
           u"Python", u"SQL",
           u"Ruby"]
 
-class ISGPastebinSettings(Interface):
+class ISGPastebinSettings(form.Schema):
     """ Interface for the form on the control panel. """
+    form.widget(preferred_languages=TextLinesFieldWidget)
     preferred_languages = schema.Set(title=_(u"Preferred coding languages"),
             description=_(u"A list of coding languages that will be highlighted according to their specific syntax."),
             required=False,

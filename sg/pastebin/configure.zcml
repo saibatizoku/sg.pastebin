@@ -20,7 +20,6 @@
         class=".controlpanel.SGPastebinSettingsControlPanel"
         permission="cmf.ManagePortal"
         />
-
     <genericsetup:registerProfile
         name="default"
         title="Install SoftwareGuru Pastebin Content-Type"
