@@ -51,7 +51,7 @@ class IPaste(form.Schema):
     code = schema.SourceText(title=_(u"Source code"))
 
 
-class View(grok.View):
+class View(dexterity.DisplayForm):
     grok.context(IPaste)
     grok.require('zope2.View')
     grok.layer(ISGPastebinLayer)

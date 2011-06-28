@@ -31,6 +31,7 @@ class ISGPastebinSettings(form.Schema):
             default=set(LANGS),
             value_type= schema.TextLine(title=_(u"Language")))
 
+    form.widget(preferred_languages=TextLinesFieldWidget)
     preferred_styles = schema.Set(title=_(u"Styles for highlighting syntax"),
             required=False,
             default=set([]),
@@ -46,6 +47,7 @@ class SGPastebinSettingsEditForm(controlpanel.RegistryEditForm):
     schema = ISGPastebinSettings
     label = _(u"SoftwareGuru Pastebin Settings") 
     description = _(u"Here you can modify the settings for SG Pastebin.")
+
 
     def updateFields(self):
         super(SGPastebinSettingsEditForm, self).updateFields()
