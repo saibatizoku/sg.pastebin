@@ -56,6 +56,9 @@ class View(dexterity.DisplayForm):
     grok.require('zope2.View')
     grok.layer(ISGPastebinLayer)
 
+    def updateWidgets(self):
+        super(View, self).updateWidgets()
+        self.widgets['code'].rows = 25
 
     @memoize
     def pygmented(self):
