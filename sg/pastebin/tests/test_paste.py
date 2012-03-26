@@ -1,22 +1,29 @@
 # -*- coding: utf-8 -*-
 
-import unittest
+import unittest2 as unittest
 
 from zope.component import createObject
 from zope.component import queryUtility
-from Products.CMFCore.utils import getToolByName
 
+from Products.CMFCore.utils import getToolByName
+from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles
 from plone.dexterity.interfaces import IDexterityFTI
 
-from Products.PloneTestCase.ptc import PloneTestCase
-from sg.pastebin.tests.layer import Layer
-
+from sg.pastebin.testing import INTEGRATION_TESTING
 from sg.pastebin.paste import IPaste
 
 
-class TestPastebinIntegration(PloneTestCase):
+class TestPastebinIntegration(unittest.TestCase):
 
-    layer = Layer
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        self.portal.invokeFactory('Folder', 'test-folder')
+        setRoles(self.portal, TEST_USER_ID, ['Member'])
+        self.folder = self.portal['test-folder']
 
     def test_adding(self):
         self.folder.invokeFactory('sg.pastebin.paste', 'snippet1')
