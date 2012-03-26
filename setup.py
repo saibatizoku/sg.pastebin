@@ -24,16 +24,19 @@ setup(name='sg.pastebin',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'setuptools',
-          # -*- Extra requirements: -*-
-          'Plone',
-          'pygments',
-          'cioppino.twothumbs',
-          'plone.app.dexterity',
-          'plone.app.referenceablebehavior',
-          'collective.autopermission',
-          'collective.testcaselayer',
-      ],
+        'setuptools',
+        # -*- Extra requirements: -*-
+        'Plone',
+        'pygments',
+        'cioppino.twothumbs',
+        'plone.app.dexterity',
+        'plone.app.referenceablebehavior',
+        'collective.autopermission',
+        'collective.testcaselayer',
+        ],
+      extras_require={
+        'test': ['plone.app.testing'],
+        },
       entry_points="""
       [z3c.autoinclude.plugin]
             target = plone
